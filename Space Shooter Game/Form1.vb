@@ -144,11 +144,11 @@
             gameOver()
             Me.healthDisplay.Image = Space_Shooter_Game.My.Resources.Resources.health0
         End If
-        If score > 20 And score < 30 Then
+        If score > 20 And score < 45 Then
             level = 2
             moveSpeed = 7
         End If
-        If score >= 30 And score < 100 Then
+        If score >= 45 And score < 100 Then
             level = 3
             shotSpeed = 18
         End If
