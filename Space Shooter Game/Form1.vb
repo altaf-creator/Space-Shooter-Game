@@ -51,7 +51,7 @@
             Case Keys.F1
                 MessageBox.Show("Controls:" & vbCrLf & "Arrow keys = Move" & vbCrLf & "Q = Restart the game" & vbCrLf & "F1 = Shows this window" & vbCrLf & "F2 = About" & vbCrLf & "Your mission is to shoot the asteroids!" & vbCrLf & "And dodge it. Get the highest score and be the king!", "Help", MessageBoxButtons.OK, MessageBoxIcon.Question)
             Case Keys.F2
-                MessageBox.Show("Space Shooter Game" & vbCrLf & "v1.1" & vbCrLf & "By Altaf" & vbCrLf & "Coded with Visual Basic" & vbCrLf & "Created using Microsoft Visual Studio", "About", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Space Shooter Game" & vbCrLf & "v1.2" & vbCrLf & "By Altaf" & vbCrLf & "Coded with Visual Basic" & vbCrLf & "Created using Microsoft Visual Studio", "About", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End Select
     End Sub
 
@@ -167,11 +167,11 @@
             level = 7
             shotSpeed = 23
         End If
-        If score >= 400 And score < 620 Then
+        If score >= 400 And score < 560 Then
             level = 8
             moveSpeed = 10
         End If
-        If score >= 620 And score < 750 Then
+        If score >= 560 And score < 750 Then
             level = 9
             shotSpeed = 24
         End If
