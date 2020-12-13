@@ -32,8 +32,8 @@ Partial Class Form1
         Me.AsteroidFall = New System.Windows.Forms.Timer(Me.components)
         Me.ForeverLoop = New System.Windows.Forms.Timer(Me.components)
         Me.Start = New System.Windows.Forms.Timer(Me.components)
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.ScoreName = New System.Windows.Forms.Label()
+        Me.scoreDisplay = New System.Windows.Forms.Label()
         Me.help = New System.Windows.Forms.Timer(Me.components)
         Me.healthDisplay = New System.Windows.Forms.PictureBox()
         Me.Void = New System.Windows.Forms.PictureBox()
@@ -41,6 +41,8 @@ Partial Class Form1
         Me.shot = New System.Windows.Forms.PictureBox()
         Me.asteroid1 = New System.Windows.Forms.PictureBox()
         Me.asteroid2 = New System.Windows.Forms.PictureBox()
+        Me.LevelName = New System.Windows.Forms.Label()
+        Me.levelText = New System.Windows.Forms.Label()
         CType(Me.healthDisplay, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Void, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Player, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -96,29 +98,29 @@ Partial Class Form1
         'Start
         '
         '
-        'Label4
+        'ScoreName
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(11, 417)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(55, 20)
-        Me.Label4.TabIndex = 9
-        Me.Label4.Text = "Score:"
+        Me.ScoreName.AutoSize = True
+        Me.ScoreName.BackColor = System.Drawing.Color.Transparent
+        Me.ScoreName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ScoreName.ForeColor = System.Drawing.Color.White
+        Me.ScoreName.Location = New System.Drawing.Point(11, 417)
+        Me.ScoreName.Name = "ScoreName"
+        Me.ScoreName.Size = New System.Drawing.Size(55, 20)
+        Me.ScoreName.TabIndex = 9
+        Me.ScoreName.Text = "Score:"
         '
-        'Label5
+        'scoreDisplay
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(60, 418)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(66, 20)
-        Me.Label5.TabIndex = 10
-        Me.Label5.Text = "<score>"
+        Me.scoreDisplay.AutoSize = True
+        Me.scoreDisplay.BackColor = System.Drawing.Color.Transparent
+        Me.scoreDisplay.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.scoreDisplay.ForeColor = System.Drawing.Color.White
+        Me.scoreDisplay.Location = New System.Drawing.Point(60, 417)
+        Me.scoreDisplay.Name = "scoreDisplay"
+        Me.scoreDisplay.Size = New System.Drawing.Size(66, 20)
+        Me.scoreDisplay.TabIndex = 10
+        Me.scoreDisplay.Text = "<score>"
         '
         'healthDisplay
         '
@@ -182,17 +184,43 @@ Partial Class Form1
         Me.asteroid2.TabIndex = 14
         Me.asteroid2.TabStop = False
         '
+        'LevelName
+        '
+        Me.LevelName.AutoSize = True
+        Me.LevelName.BackColor = System.Drawing.Color.Transparent
+        Me.LevelName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LevelName.ForeColor = System.Drawing.Color.White
+        Me.LevelName.Location = New System.Drawing.Point(11, 396)
+        Me.LevelName.Name = "LevelName"
+        Me.LevelName.Size = New System.Drawing.Size(50, 20)
+        Me.LevelName.TabIndex = 15
+        Me.LevelName.Text = "Level:"
+        '
+        'levelText
+        '
+        Me.levelText.AutoSize = True
+        Me.levelText.BackColor = System.Drawing.Color.Transparent
+        Me.levelText.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.levelText.ForeColor = System.Drawing.Color.White
+        Me.levelText.Location = New System.Drawing.Point(60, 396)
+        Me.levelText.Name = "levelText"
+        Me.levelText.Size = New System.Drawing.Size(58, 20)
+        Me.levelText.TabIndex = 16
+        Me.levelText.Text = "<level>"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.levelText)
+        Me.Controls.Add(Me.LevelName)
         Me.Controls.Add(Me.healthDisplay)
         Me.Controls.Add(Me.asteroid2)
         Me.Controls.Add(Me.asteroid1)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.scoreDisplay)
+        Me.Controls.Add(Me.ScoreName)
         Me.Controls.Add(Me.Void)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -225,10 +253,12 @@ Partial Class Form1
     Friend WithEvents ForeverLoop As Timer
     Friend WithEvents Start As Timer
     Friend WithEvents Void As PictureBox
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
+    Friend WithEvents ScoreName As Label
+    Friend WithEvents scoreDisplay As Label
     Friend WithEvents healthDisplay As PictureBox
     Friend WithEvents help As Timer
     Friend WithEvents asteroid1 As PictureBox
     Friend WithEvents asteroid2 As PictureBox
+    Friend WithEvents LevelName As Label
+    Friend WithEvents levelText As Label
 End Class
