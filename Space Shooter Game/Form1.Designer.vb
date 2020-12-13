@@ -34,7 +34,6 @@ Partial Class Form1
         Me.Start = New System.Windows.Forms.Timer(Me.components)
         Me.ScoreName = New System.Windows.Forms.Label()
         Me.scoreDisplay = New System.Windows.Forms.Label()
-        Me.help = New System.Windows.Forms.Timer(Me.components)
         Me.healthDisplay = New System.Windows.Forms.PictureBox()
         Me.Void = New System.Windows.Forms.PictureBox()
         Me.Player = New System.Windows.Forms.PictureBox()
@@ -256,7 +255,6 @@ Partial Class Form1
     Friend WithEvents ScoreName As Label
     Friend WithEvents scoreDisplay As Label
     Friend WithEvents healthDisplay As PictureBox
-    Friend WithEvents help As Timer
     Friend WithEvents asteroid1 As PictureBox
     Friend WithEvents asteroid2 As PictureBox
     Friend WithEvents LevelName As Label

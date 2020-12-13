@@ -1,10 +1,10 @@
 ﻿Public Class Form1
-    Dim moveSpeed As Integer = 5.7
+    Dim moveSpeed As Integer = 6
     Dim r As New Random
     Dim score As Integer = 0
     Dim lives As Integer = 3
     Dim shotSpeed As Integer = 15
-    Dim level As Integer = 1
+    Dim level As String = 1
 
     Function startCode() As Object
         asteroid1.Location = New Point(r.Next(100, 716), -100)
@@ -46,6 +46,7 @@
                 shot.Location = New Point(Player.Location)
                 TmrShot.Start()
                 shot.Visible = True
+                score = 1000
             Case Keys.Q
                 Start.Start()
             Case Keys.F1
@@ -143,48 +144,45 @@
             gameOver()
             Me.healthDisplay.Image = Space_Shooter_Game.My.Resources.Resources.health0
         End If
-        If score > 20 And score <= 60 Then
+        If score > 20 And score < 30 Then
             level = 2
-            moveSpeed = 8
+            moveSpeed = 7
         End If
-        If score > 61 And score <= 100 Then
+        If score >= 30 And score < 100 Then
             level = 3
-            moveSpeed = 8.5
             shotSpeed = 18
         End If
-        If score > 101 And score <= 150 Then
+        If score >= 100 And score < 150 Then
             level = 4
-            moveSpeed = 10
+            moveSpeed = 8
         End If
-        If score > 151 And score <= 210 Then
+        If score >= 150 And score < 210 Then
             level = 5
-            moveSpeed = 10.5
             shotSpeed = 20
         End If
-        If score > 211 And score <= 300 Then
+        If score >= 210 And score < 300 Then
             level = 6
-            moveSpeed = 12
+            moveSpeed = 9
         End If
-        If score > 301 And score <= 400 Then
+        If score >= 300 And score < 400 Then
             level = 7
-            moveSpeed = 12.5
             shotSpeed = 23
         End If
-        If score > 401 And score <= 620 Then
+        If score >= 400 And score < 620 Then
             level = 8
-            moveSpeed = 13.5
+            moveSpeed = 10
         End If
-        If score > 621 And score <= 750 Then
+        If score >= 620 And score < 750 Then
             level = 9
             shotSpeed = 24
         End If
-        If score > 751 And score <= 1000 Then
+        If score >= 750 And score < 1000 Then
             level = 10
-            moveSpeed = 15
+            moveSpeed = 11
         End If
-        If score > 1001 Then
-            level = 11
-            moveSpeed = 17
+        If score >= 1000 Then
+            level = "The King"
+            moveSpeed = 12
             shotSpeed = 25
         End If
         Me.scoreDisplay.Text = score
