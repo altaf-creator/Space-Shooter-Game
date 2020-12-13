@@ -46,7 +46,6 @@
                 shot.Location = New Point(Player.Location)
                 TmrShot.Start()
                 shot.Visible = True
-                score = 1000
             Case Keys.Q
                 Start.Start()
             Case Keys.F1
