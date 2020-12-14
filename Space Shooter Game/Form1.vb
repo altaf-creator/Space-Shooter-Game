@@ -20,6 +20,7 @@
         shot.Visible = True
         score = 0
         lives = 3
+        level = 0
     End Function
 
     Function gameOver() As Object
