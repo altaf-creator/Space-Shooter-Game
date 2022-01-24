@@ -21,6 +21,7 @@
         score = 0
         lives = 3
         level = 1
+        Return "Game Over"
     End Function
 
     Function gameOver() As Object
@@ -35,6 +36,7 @@
         asteroid1.Location = New Point(-50, -50)
         asteroid2.Location = New Point(-50, -50)
         Player.Location = New Point(-50, -50)
+        Return "Game Over!"
     End Function
 
     Private Sub Form1_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
@@ -50,9 +52,8 @@
             Case Keys.Q
                 Start.Start()
             Case Keys.F1
-                MessageBox.Show("Controls:" & vbCrLf & "Arrow keys = Move" & vbCrLf & "Q = Restart the game" & vbCrLf & "F1 = Shows this window" & vbCrLf & "F2 = About" & vbCrLf & "Your mission is to shoot the asteroids!" & vbCrLf & "And dodge it. Get the highest score and be the king!", "Help", MessageBoxButtons.OK, MessageBoxIcon.Question)
-            Case Keys.F2
-                MessageBox.Show("Space Shooter Game" & vbCrLf & "v1.3" & vbCrLf & "By Altaf" & vbCrLf & "Coded with Visual Basic" & vbCrLf & "Created using Microsoft Visual Studio" & vbCrLf & "Source Code: https://github.com/altaf-creator/Space-Shooter-Game", "About", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Dim helpForm = New HelpForm()
+                helpForm.Show()
         End Select
     End Sub
 
@@ -85,6 +86,7 @@
         AsteroidFall.Start()
         Label1.Visible = False
         Label2.Visible = False
+        levelUpLabel.Visible = False
         ForeverLoop.Start()
         lives = 3
     End Sub
@@ -112,6 +114,7 @@
             AsteroidFall.Start()
             asteroid1.Visible = True
             shot.Location = New Point(-50, -50)
+
             score += 1
         End If
         If shot.Bounds.IntersectsWith(asteroid2.Bounds) Then
@@ -144,46 +147,66 @@
             gameOver()
             Me.healthDisplay.Image = Space_Shooter_Game.My.Resources.Resources.health0
         End If
-        If score > 20 And score < 45 Then
+        If score = 20 Then
             level = 2
             moveSpeed = 7
+            Me.levelUpLabel.Visible = True
+            LevelUpTime.Start()
         End If
-        If score >= 45 And score < 100 Then
+        If score = 45 Then
             level = 3
             shotSpeed = 18
+            Me.levelUpLabel.Visible = True
+            LevelUpTime.Start()
         End If
-        If score >= 100 And score < 150 Then
+        If score = 100 Then
             level = 4
             moveSpeed = 8
+            Me.levelUpLabel.Visible = True
+            LevelUpTime.Start()
         End If
-        If score >= 150 And score < 210 Then
+        If score = 150 Then
             level = 5
             shotSpeed = 20
+            Me.levelUpLabel.Visible = True
+            LevelUpTime.Start()
         End If
-        If score >= 210 And score < 300 Then
+        If score = 210 Then
             level = 6
             moveSpeed = 9
+            Me.levelUpLabel.Visible = True
+            LevelUpTime.Start()
         End If
-        If score >= 300 And score < 400 Then
+        If score = 300 Then
             level = 7
             shotSpeed = 23
+            Me.levelUpLabel.Visible = True
+            LevelUpTime.Start()
         End If
-        If score >= 400 And score < 560 Then
+        If score = 400 Then
             level = 8
             moveSpeed = 10
+            Me.levelUpLabel.Visible = True
+            LevelUpTime.Start()
         End If
-        If score >= 560 And score < 750 Then
+        If score = 560 Then
             level = 9
             shotSpeed = 24
+            levelUpLabel.Visible = True
+            LevelUpTime.Start()
         End If
-        If score >= 750 And score < 1000 Then
+        If score = 750 Then
             level = 10
             moveSpeed = 11
+            Me.levelUpLabel.Visible = True
+            LevelUpTime.Start()
         End If
-        If score >= 1000 Then
+        If score = 1000 Then
             level = "The King"
             moveSpeed = 12
             shotSpeed = 25
+            Me.levelUpLabel.Visible = True
+            LevelUpTime.Start()
         End If
         Me.scoreDisplay.Text = score
         Me.levelText.Text = level
@@ -191,5 +214,10 @@
 
     Private Sub Start_Tick(sender As Object, e As EventArgs) Handles Start.Tick
         startCode()
+    End Sub
+
+    Private Sub LevelUpTime_Tick(sender As Object, e As EventArgs) Handles LevelUpTime.Tick
+        Me.levelUpLabel.Visible = False
+        LevelUpTime.Stop()
     End Sub
 End Class

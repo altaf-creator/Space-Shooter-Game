@@ -135,6 +135,9 @@
   <metadata name="Start.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>398, 17</value>
   </metadata>
+  <metadata name="LevelUpTime.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>697, 17</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="healthDisplay.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -162,7 +165,7 @@
         QmCC
 </value>
   </data>
-  <data name="asteroid1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="asteroid2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAyEAAAJfCAYAAABosdn2AAABgmlDQ1BJQ0MgcHJvZmlsZQAAKM+VkTlI
         A0EYhT+jEtGIhSlELLaIVgqiIpYSRREUQhLBq3B3Y6KQ3YTdBBtLwVaw8Gi8ChtrbS1sBUHwALGytFK0
@@ -446,7 +449,7 @@
         IeMzMzMzM6sdhIzPzGzgXve6/w9IiaEmgxVObwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="asteroid2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="asteroid1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAyEAAAJfCAYAAABosdn2AAABgmlDQ1BJQ0MgcHJvZmlsZQAAKM+VkTlI
         A0EYhT+jEtGIhSlELLaIVgqiIpYSRREUQhLBq3B3Y6KQ3YTdBBtLwVaw8Gi8ChtrbS1sBUHwALGytFK0
